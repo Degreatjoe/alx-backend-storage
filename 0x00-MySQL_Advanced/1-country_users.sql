@@ -1,10 +1,8 @@
--- Script to create the users table with specific attributes, including an enum for the country
--- The table includes an auto-incrementing primary key, a unique email, name, and country column
-
-CREATE TABLE IF NOT EXISTS users (
-    id INT NOT NULL AUTO_INCREMENT,              -- Primary key, auto-incrementing ID
-    email VARCHAR(255) NOT NULL UNIQUE,          -- Email, must be unique and cannot be null
-    name VARCHAR(255),                           -- Name, optional
-    country ENUM('US', 'CO', 'TN') NOT NULL DEFAULT 'US',  -- Country enum, default is 'US'
-    PRIMARY KEY (id)                             -- Set 'id' as the primary key
+-- A SQL script that creates a table (called users) following these requirements:
+-- id, email, name, country(enumeration of US, CO and TN)
+CREATE TABLE IF NOT EXISTS users(
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	email varchar(255) NOT NULL UNIQUE,
+	name varchar(255),
+	country ENUM('US', 'CO', 'TN') DEFAULT 'US' NOT NULL
 );
